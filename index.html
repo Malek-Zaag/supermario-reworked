@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super Mario</title>
+</head>
+<body id="mycanvas">
+<script type="module">
+    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+    kaboom();
+    loadSprite("mario", "./assets/MarioNSMBUDeluxe.png")
+    const mario = add([
+        sprite('mario'),
+        pos(20, 100),
+        scale(0.25),
+        area(),
+        body(),
+    ]);
+    onKeyPress("space", () => {
+        mario.jump()
+    })
+</script>
+</body>
+</html>
