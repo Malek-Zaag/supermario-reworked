@@ -4,79 +4,9 @@
     <meta charset="UTF-8">
     <title>Super Mario</title>
 </head>
-<body id="mycanvas">
-<script type="module">
-    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
-    kaboom();
-    loadSprite("mario", "./assets/mario.png")
-    loadSprite("block", "./assets/block.png")
-    loadSprite("portal", "./assets/portal.png")
-    const mario = add([
-        sprite('mario'),
-        pos(20, 10 ),
-        scale(2),
-        area(),
-        body(),
-    ])
-    const SPEED = 320
-    onKeyPress("space", () => {
-        mario.jump()
-    })
-    onKeyDown('right', () =>{
-        mario.move(SPEED, 0)
-    })
-    onKeyDown('left', () =>{
-        mario.move(-SPEED, 0)
-    })
-    onKeyDown('up' , ()=>{
-        mario.jump()
-    })
+<body>
+<script src="index.js" type="module">
 
-    const level=addLevel([
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                        ',
-        '                                                                                       ',
-            '      ' ,
-            '' ,
-            '' ,
-
-        '' ,
-            '' ,
-            '          =========               ==                                         ' ,
-            '' ,
-            '',
-            '' ,
-            '' ,
-            '                                                        *   ' ,
-        '==================================================    ===========',
-    ],
-        {
-            width: 20,
-            height: 20,
-            "=" : () => [
-                sprite("block"),
-                area(),
-                solid(),
-            ],
-            "*" : ()=>[
-                sprite("portal"),
-                area(),
-                solid(),
-            ]
-        }
-    )
 </script>
 </body>
 </html>
